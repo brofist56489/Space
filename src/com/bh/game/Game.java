@@ -59,6 +59,7 @@ public class Game extends Canvas implements Runnable {
 		gameoverImage = new Image("/gameover.png");
 		
 		screen = new Screen(WIDTH, HEIGHT);
+		frame.setLocation(400, 200);
 		level = new Level((WIDTH >> 4) + 1, (HEIGHT >> 4) + 1);
 		player = new Player(WIDTH / 2 - 8, 0);
 		level.setPlayer(player);
