@@ -35,9 +35,6 @@ public class Image {
 		this.w = image.getWidth();
 		this.h = image.getHeight();
 		pixels = image.getRGB(0, 0, w, h, null, 0, w);
-		for (int i = 0; i < pixels.length; i++) {
-			pixels[i] += 0x1000000;
-		}
 	}
 	
 	public static double getAngle(int x, int y, int x1, int y1) {
@@ -47,7 +44,6 @@ public class Image {
 	    return inRads;
 	}
 	public static BufferedImage Rotate(BufferedImage i, double rotation) {
-		rotation = Math.toRadians(rotation);
 		AffineTransform tx = AffineTransform.getRotateInstance(rotation,
 				i.getWidth() / 2, i.getHeight() / 2);
 		AffineTransformOp op = new AffineTransformOp(tx,
