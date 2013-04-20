@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.bh.game.Game;
 import com.bh.game.graphics.Image;
 import com.bh.game.graphics.Screen;
 import com.bh.game.level.entity.Bullet;
@@ -38,6 +39,7 @@ public class Level {
 		if (e instanceof Enemy) {
 			enemies.add((Enemy)e);
 		}
+		
 	}
 	
 	public void removeEntity(Entity e) {
@@ -71,6 +73,19 @@ public class Level {
 					removeEntity(e);
 					i--;
 					continue;
+				}
+			}
+			if (entities.get(i) instanceof Enemy) {
+				Enemy e = (Enemy)entities.get(i);
+				if(player.x < e.x) {
+					e.x--;
+				} else {
+					e.x++;
+				}
+				if(player.y < e.y) {
+					e.y--;
+				} else {
+					e.y++;
 				}
 			}
 		}
