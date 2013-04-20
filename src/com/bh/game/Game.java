@@ -103,7 +103,7 @@ public class Game extends Canvas implements Runnable {
 		if (!gameover) { 
 			input.tick();
 			
-			if (tickCount % 100 == 0) level.addEnemy();
+			if (tickCount % 50 == 0) level.addEnemy();
 			
 			level.tick();
 			frame.setTitle(NAME + " Score: " + player.score);
