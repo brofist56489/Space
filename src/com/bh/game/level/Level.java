@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import com.bh.game.Game;
 import com.bh.game.graphics.Image;
 import com.bh.game.graphics.Screen;
 import com.bh.game.level.entity.Bullet;
@@ -77,10 +76,10 @@ public class Level {
 			}
 			if (entities.get(i) instanceof Enemy) {
 				Enemy e = (Enemy)entities.get(i);
-				e.rotation = Image.getAngle(e.x, e.y, player.x, player.y) + 90;
+				e.rotation = Image.getAngle(e.x, e.y, player.x, player.y);
 
-				e.x += 5 * Math.cos(e.rotation);
-				e.y += 5 * Math.sin(e.rotation);
+				e.x += 2 * Math.cos(e.rotation);
+				e.y += 2 * Math.sin(e.rotation);
 			}
 		}
 		player.tick();

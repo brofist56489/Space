@@ -40,16 +40,11 @@ public class Image {
 		}
 	}
 	
-	public static double getAngle(int x, int y, int x1, int y1)
-	{
-	    double dx = x - x1;
-	    double dy = -(y - y1);
+	public static double getAngle(int x, int y, int x1, int y1) {
+	    double dx = x1 - x;
+	    double dy = y1 - y;
 	    double inRads = Math.atan2(dy,dx);
-	    if (inRads < 0)
-	        inRads = Math.abs(inRads);
-	    else
-	        inRads = 2*Math.PI - inRads;
-	    return Math.toDegrees(inRads);
+	    return inRads;
 	}
 	public static BufferedImage Rotate(BufferedImage i, double rotation) {
 		rotation = Math.toRadians(rotation);
