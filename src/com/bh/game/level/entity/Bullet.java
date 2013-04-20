@@ -11,9 +11,7 @@ public class Bullet extends Entity {
 	public Bullet(int x, int y, int d) {
 		super(x, y, "/bullet.png");
 		this.d = d;
-		if (d == 1) {
-			canHarmPlayer = true;
-		}
+		canHarmPlayer = (d == 1);
 	}
 	
 	public void tick() {
