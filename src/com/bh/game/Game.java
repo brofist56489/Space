@@ -1,5 +1,3 @@
-// Hello Adam
-
 package com.bh.game;
 
 import java.awt.Canvas;
