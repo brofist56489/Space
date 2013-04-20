@@ -61,7 +61,7 @@ public class Screen {
 				
 				int c = pixs[xs + ys * w];
 				
-				if (c == 0x7f007f) {
+				if (c % 0x1000000 == 0x7f007f) {
 					continue;
 				}
 				

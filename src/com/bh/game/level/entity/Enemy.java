@@ -4,6 +4,7 @@ import java.awt.Rectangle;
 import java.util.Random;
 
 import com.bh.game.Game;
+import com.bh.game.graphics.Image;
 import com.bh.game.graphics.Screen;
 import com.bh.game.level.Level;
 import com.bh.game.sound.Sound;
@@ -52,5 +53,9 @@ public class Enemy extends Entity {
 	
 	public void preRender(Screen screen) {
 		screen.addLightSource(x + 8, y + 8, 40, 128);
+	}
+	
+	public void render(Screen screen) {
+		screen.render(new Image(Image.Rotate(image.image, rotation - (Math.PI / 2))).pixels, x, y, w, h, 0, true);
 	}
 }
