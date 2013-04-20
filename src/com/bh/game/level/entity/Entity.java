@@ -11,6 +11,7 @@ public class Entity {
 	
 	public int w;
 	public int h;
+	public double rotation = 0.0;
 	
 	public Image image;
 	
@@ -38,6 +39,6 @@ public class Entity {
 	}
 	
 	public void render(Screen screen) {
-		screen.render(image.pixels, x, y, w, h, 0, true);
+		screen.render(Image.Rotate(image.image, rotation).getRGB(0, 0, w, h, null, 0, w), x, y, w, h, 0, true);
 	}
 }

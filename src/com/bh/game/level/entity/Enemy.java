@@ -15,7 +15,6 @@ public class Enemy extends Entity {
 	}
 	
 	public void tick() {
-		y += 1;
 		Level level = Game.instance.level;
 		
 		for (int i = 0; i < level.bullets.size(); i++) {

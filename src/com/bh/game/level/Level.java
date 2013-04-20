@@ -77,16 +77,10 @@ public class Level {
 			}
 			if (entities.get(i) instanceof Enemy) {
 				Enemy e = (Enemy)entities.get(i);
-				if(player.x < e.x) {
-					e.x--;
-				} else {
-					e.x++;
-				}
-				if(player.y < e.y) {
-					e.y--;
-				} else {
-					e.y++;
-				}
+				e.rotation = Image.getAngle(e.x, e.y, player.x, player.y) + 90;
+
+				e.x += 5 * Math.cos(e.rotation);
+				e.y += 5 * Math.sin(e.rotation);
 			}
 		}
 		player.tick();
